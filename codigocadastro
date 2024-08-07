@@ -1,0 +1,63 @@
+import tkinter as tk
+from tkinter import messagebox
+window = tk.Tk()
+window.title('formulario de cadastro')
+window.geometry("900x677")
+def querypg(nome, idade, peso, altura, extra):
+    print("nome:", nome)
+    print("idade:", idade)
+    print("peso:", peso)
+    print("altura:", altura)
+    print("extra:", extra)
+ 
+# janela
+text = tk.Label(window, width=130,)
+textentry=tk.Entry(window)
+ 
+ 
+ 
+placeholder_image = tk.PhotoImage(width=1, height=1)
+label_image = tk.Label(window, image=placeholder_image)
+label_image.grid(pady=5)
+# entrada nome
+text.grid()
+nomelabel = tk.Label(window, text="nome")
+nomelabel.grid()
+nomeentry=tk.Entry(window, width=30)
+nomeentry.grid(column=0, row=28)
+nomeentry.grid(column=0, row=28)
+# entrada idade
+ 
+idadelabel=tk.Label (window, text="idade")
+idadelabel.grid()
+idadeentry = tk.Entry(window,text="idade")
+idadeentry.grid()
+ 
+# entrada peso
+pesolabel= tk.Label(window, text="peso")
+pesolabel.grid()
+pesoentry = tk.Entry(window, text="peso")
+pesoentry.grid()
+ 
+# entrada altura
+alturalabel= tk.Label(window, text="altura")
+alturalabel.grid()
+alturaentry = tk.Entry(window, text="altura")
+alturaentry.grid()
+ 
+# extra
+extralabel= tk.Label(window, text="extra")
+extralabel.grid()
+extraentry = tk.Entry(window, text="extra")
+extraentry.grid()
+ 
+ 
+# criação botão login
+button = tk.Button (window, text="Login", command=lambda:querypg(nomeentry.get(),idadeentry.get(), alturaentry.get(), pesoentry.get(),extraentry.get()))
+button.grid(column=0, row=50)
+# criação do botão cancelar
+button2 = tk.Button (window,  text="Cancelar",command=quit)
+button2.grid(column=0, row=100)
+ 
+ 
+window.mainloop()
